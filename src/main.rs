@@ -2,8 +2,11 @@ mod variables;
 mod data_types;
 mod arr;
 mod strings_and_str;
+mod string_literals;
+mod control_flow;
+mod exercise;
 
-use std::io;
+// use std::io;
 
 
 fn main() {
@@ -23,8 +26,10 @@ fn main() {
 
     // data_types::data_types();
     // variables::variables();
-    strings_and_str::output_str();
-    
+    // strings_and_str::output_str();
+    // string_literals::string_literals();
+    // control_flow::decision_making();
+    exercise::exercises();
 }
 
 fn weight_calculations(weight: f32) -> f32 {
