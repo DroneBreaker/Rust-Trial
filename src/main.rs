@@ -14,6 +14,10 @@ mod control_flow;
 mod exercise;
 mod enums;
 mod traits;
+mod vectors;
+mod test;
+
+use vectors::vector;
 
 // use std::io;
 
@@ -50,12 +54,16 @@ fn main() {
     // let dog = enums::Pet::Dog;
     // println!("{}", );
     // traits::Course;
-    let course1 = traits::Course{headline: String::from("headline"), author: String::from("Browne")};
-    let course2 = traits::AnotherCourse {headline: String::from("Another headline"), author: String::from(" Another Browne")};
+    // let course1 = traits::Course{headline: String::from("headline"), author: String::from("Browne")};
+    // let course2 = traits::AnotherCourse {headline: String::from("Another headline"), author: String::from(" Another Browne")};
     
 
-    println!("{:?}", course1.overview());
-    println!("{:?}", course2.overview());
+    // println!("{:?}", course1.overview());
+    // println!("{:?}", course2.overview());
+
+    // crate::vector();
+    test::tests::it_works();
+
 }
 
 fn weight_calculations(weight: f32) -> f32 {
