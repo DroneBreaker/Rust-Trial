@@ -64,27 +64,36 @@ pub fn exercises() {
     // println!("Color: {}", my_car.color);
     // println!("Top Speed: {} mph", my_car.top_speed)
 
-    pub enum Shape {
-        Triangle,
-        Square,
-        Pentagon,
-        Octagon
-    }
+    // pub enum Shape {
+    //     Triangle,
+    //     Square,
+    //     Pentagon,
+    //     Octagon
+    // }
 
-    impl Shape {
-        fn corners(&self) -> u8 {
-            match self {
-                Shape::Triangle => 3,
-                Shape::Square => 4,
-                Shape::Pentagon => 5,
-                Shape::Octagon => 8,
-            }
-        }
-    }
+    // impl Shape {
+    //     fn corners(&self) -> u8 {
+    //         match self {
+    //             Shape::Triangle => 3,
+    //             Shape::Square => 4,
+    //             Shape::Pentagon => 5,
+    //             Shape::Octagon => 8,
+    //         }
+    //     }
+    // }
 
-    let triangle = Shape::Triangle;
-    let square = Shape::Square;
+    // let triangle = Shape::Triangle;
+    // let square = Shape::Square;
 
-    println!("Number of corners in a triangle: {}", triangle.corners());
-    println!("Number of corners in a square: {}", square.corners());
+    // println!("Number of corners in a triangle: {}", triangle.corners());
+    // println!("Number of corners in a square: {}", square.corners());
+
+    let vec = vec![1, 3, 5, 7, 9];
+    let mut newVec = Vec::new();
+
+    vec.iter().for_each(|&x| {
+        newVec.push(x * 10);
+    });
+
+    println!("{:?}", newVec);
 }

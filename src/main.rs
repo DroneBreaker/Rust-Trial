@@ -16,6 +16,7 @@ mod enums;
 mod traits;
 mod vectors;
 mod test;
+mod closures;
 
 use vectors::vector;
 
@@ -44,7 +45,7 @@ fn main() {
     // control_flow::decision_making();
 
     // let mut my_vector = vec![1, 3, 5, 7];
-    // exercise::exercises();
+    exercise::exercises();
     // let mut my_car = exercises.();
     // print!("{:?}", exercise::exercises(&mut my_vector));
     // my_vector.push(15);
@@ -62,7 +63,12 @@ fn main() {
     // println!("{:?}", course2.overview());
 
     // crate::vector();
-    test::tests::it_works();
+    // test::tests::it_works(); 
+    // test::tests::it_fails();
+    // let a = crate::closures::City{city: String::from("A"), population: 100};
+
+    // println!("{:?}", a);
+
 
 }
 
