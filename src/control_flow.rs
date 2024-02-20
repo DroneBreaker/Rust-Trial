@@ -20,7 +20,7 @@ pub fn decision_making() {
 
     //        if decrease == 4 {
     //         break;
-    //        } 
+    //        }
 
     //        if num == 2 {
     //         break 'counter;
@@ -34,7 +34,7 @@ pub fn decision_making() {
 
     // WHILE LOOP
     // let mut num = 0;
-    
+
     // while num < 5 {
     //     println!("{}", num);
     //     num += 1;

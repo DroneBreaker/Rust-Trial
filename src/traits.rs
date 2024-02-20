@@ -6,12 +6,12 @@ pub trait Overview {
 
 pub struct Course {
     pub(crate) headline: String,
-    pub author: String
+    pub author: String,
 }
 
 pub struct AnotherCourse {
     pub headline: String,
-    pub author: String
+    pub author: String,
 }
 
 impl Overview for Course {

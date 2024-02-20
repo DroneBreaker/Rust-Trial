@@ -4,24 +4,23 @@
 
 use crate::traits::Overview;
 
-
-mod variables;
-mod data_types;
 mod arr;
-mod strings_and_str;
-mod string_literals;
-mod control_flow;
-mod exercise;
-mod enums;
-mod traits;
-mod vectors;
-mod test;
 mod closures;
+mod concurrency;
+mod control_flow;
+mod data_types;
+mod enums;
+mod exercise;
+mod string_literals;
+mod strings_and_str;
+mod test;
+mod traits;
+mod variables;
+mod vectors;
 
 use vectors::vector;
 
 // use std::io;
-
 
 fn main() {
     // println!("Enter your weight (kg)");
@@ -45,7 +44,7 @@ fn main() {
     // control_flow::decision_making();
 
     // let mut my_vector = vec![1, 3, 5, 7];
-    exercise::exercises();
+    // exercise::exercises();
     // let mut my_car = exercises.();
     // print!("{:?}", exercise::exercises(&mut my_vector));
     // my_vector.push(15);
@@ -57,19 +56,17 @@ fn main() {
     // traits::Course;
     // let course1 = traits::Course{headline: String::from("headline"), author: String::from("Browne")};
     // let course2 = traits::AnotherCourse {headline: String::from("Another headline"), author: String::from(" Another Browne")};
-    
 
     // println!("{:?}", course1.overview());
     // println!("{:?}", course2.overview());
 
     // crate::vector();
-    // test::tests::it_works(); 
+    // test::tests::it_works();
     // test::tests::it_fails();
     // let a = crate::closures::City{city: String::from("A"), population: 100};
 
     // println!("{:?}", a);
-
-
+    concurrency::concurrency();
 }
 
 fn weight_calculations(weight: f32) -> f32 {

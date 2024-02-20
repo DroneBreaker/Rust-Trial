@@ -11,4 +11,3 @@ pub mod tests {
         panic!("Test failed.!")
     }
 }
-

@@ -1,3 +1,5 @@
+use std::rc::Rc;
+
 pub fn exercises() {
     // let var1 = 5;
     // let var2 = 2;
@@ -13,7 +15,6 @@ pub fn exercises() {
     // vec.push(12);
     // println!("{:?}", vec);
 
-
     // if a > 50 {
     //     println!("The value is greater than 50")
     // } else if a == 1 {
@@ -22,8 +23,8 @@ pub fn exercises() {
     //     println!("The value is greater than 25 but less than 50")
     // }
 
-    //  
-    
+    //
+
     // struct Car {
     //     mpg: u32,
     //     color: String,
@@ -35,12 +36,12 @@ pub fn exercises() {
     //     fn set_mpg(&mut self, new_mpg: u32) {
     //         self.mpg = new_mpg;
     //     }
-    
+
     //     // Method to set the color
     //     fn set_color(&mut self, new_color: String) {
     //         self.color = new_color;
     //     }
-    
+
     //     // Method to set the top speed
     //     fn set_top_speed(&mut self, new_top_speed: u32) {
     //         self.top_speed = new_top_speed;
@@ -88,12 +89,47 @@ pub fn exercises() {
     // println!("Number of corners in a triangle: {}", triangle.corners());
     // println!("Number of corners in a square: {}", square.corners());
 
-    let vec = vec![1, 3, 5, 7, 9];
-    let mut newVec = Vec::new();
+    // let vec = vec![1, 3, 5, 7, 9];
+    // let mut newVec = Vec::new();
 
-    vec.iter().for_each(|&x| {
-        newVec.push(x * 10);
-    });
+    // vec.iter().for_each(|&x| {
+    //     newVec.push(x * 10);
+    // });
 
-    println!("{:?}", newVec);
+    // println!("{:?}", newVec);
+
+    let stack_variable: i32 = 5;
+
+    // Variable on the heap
+    let heap_variable: Box<i32> = Box::new(10);
+
+    // Multiply their values
+    let result = stack_variable * *heap_variable;
+
+    println!("{}", result);
+
+    // Create a String variable
+    let my_string = String::from("Hello, Rust!");
+
+    // Create a reference counting smart pointer
+    let smart_pointer1 = Rc::new(my_string);
+
+    // Print the reference count of smart_pointer1
+    println!(
+        "Reference count of smart_pointer1: {}",
+        Rc::strong_count(&smart_pointer1)
+    );
+
+    // Create another reference counting smart pointer pointing to smart_pointer1
+    let smart_pointer2 = Rc::clone(&smart_pointer1);
+
+    // Print the reference count of both smart pointers
+    println!(
+        "Reference count of smart_pointer1: {}",
+        Rc::strong_count(&smart_pointer1)
+    );
+    println!(
+        "Reference count of smart_pointer2: {}",
+        Rc::strong_count(&smart_pointer2)
+    );
 }

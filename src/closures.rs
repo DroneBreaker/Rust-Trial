@@ -1,8 +1,8 @@
 #[derive(Debug)]
 
 pub struct City {
-   pub city: String,
-   pub population: u64
+    pub city: String,
+    pub population: u64,
 }
 
 pub fn sort_pop(city: &mut Vec<City>) {

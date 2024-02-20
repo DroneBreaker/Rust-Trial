@@ -1,7 +1,7 @@
 pub enum Pet {
     Dog,
     Cat,
-    Fish
+    Fish,
 }
 
 impl Pet {
@@ -18,10 +18,10 @@ impl Pet {
 
 pub enum IpAddrKind {
     V4,
-    V6
+    V6,
 }
 
 pub struct IpAddr {
     kind: IpAddrKind,
-    address: String
+    address: String,
 }
