@@ -17,6 +17,8 @@ mod test;
 mod traits;
 mod variables;
 mod vectors;
+mod macros;
+mod declarative;
 
 use vectors::vector;
 
@@ -66,7 +68,10 @@ fn main() {
     // let a = crate::closures::City{city: String::from("A"), population: 100};
 
     // println!("{:?}", a);
-    concurrency::concurrency();
+    // concurrency::concurrency();
+    // macros::mac();
+    declarative::declare();
+    
 }
 
 fn weight_calculations(weight: f32) -> f32 {

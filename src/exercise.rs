@@ -1,4 +1,6 @@
 use std::rc::Rc;
+use rayon::prelude::*;
+
 
 pub fn exercises() {
     // let var1 = 5;
@@ -98,38 +100,54 @@ pub fn exercises() {
 
     // println!("{:?}", newVec);
 
-    let stack_variable: i32 = 5;
+    // let stack_variable: i32 = 5;
 
-    // Variable on the heap
-    let heap_variable: Box<i32> = Box::new(10);
+    // // Variable on the heap
+    // let heap_variable: Box<i32> = Box::new(10);
 
-    // Multiply their values
-    let result = stack_variable * *heap_variable;
+    // // Multiply their values
+    // let result = stack_variable * *heap_variable;
 
-    println!("{}", result);
+    // println!("{}", result);
 
-    // Create a String variable
-    let my_string = String::from("Hello, Rust!");
+    // // Create a String variable
+    // let my_string = String::from("Hello, Rust!");
 
-    // Create a reference counting smart pointer
-    let smart_pointer1 = Rc::new(my_string);
+    // // Create a reference counting smart pointer
+    // let smart_pointer1 = Rc::new(my_string);
 
-    // Print the reference count of smart_pointer1
-    println!(
-        "Reference count of smart_pointer1: {}",
-        Rc::strong_count(&smart_pointer1)
-    );
+    // // Print the reference count of smart_pointer1
+    // println!(
+    //     "Reference count of smart_pointer1: {}",
+    //     Rc::strong_count(&smart_pointer1)
+    // );
 
-    // Create another reference counting smart pointer pointing to smart_pointer1
-    let smart_pointer2 = Rc::clone(&smart_pointer1);
+    // // Create another reference counting smart pointer pointing to smart_pointer1
+    // let smart_pointer2 = Rc::clone(&smart_pointer1);
 
-    // Print the reference count of both smart pointers
-    println!(
-        "Reference count of smart_pointer1: {}",
-        Rc::strong_count(&smart_pointer1)
-    );
-    println!(
-        "Reference count of smart_pointer2: {}",
-        Rc::strong_count(&smart_pointer2)
-    );
+    // // Print the reference count of both smart pointers
+    // println!(
+    //     "Reference count of smart_pointer1: {}",
+    //     Rc::strong_count(&smart_pointer1)
+    // );
+    // println!(
+    //     "Reference count of smart_pointer2: {}",
+    //     Rc::strong_count(&smart_pointer2)
+    // );
+
+
+    fn fibonacci(n: u64) -> u64 {
+        if n <= 1 {
+            return n;
+        }
+
+        let (fib1, fib2) = rayon::join(|| fibonacci(n - 1), || fibonacci(n - 2));
+
+        fib1 + fib2
+
+    }
+
+    let n = 40;
+    let result = fibonacci(n);
+    println!("Fibonacci({}) = {}", n, result);
 }
