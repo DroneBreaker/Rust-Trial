@@ -2,7 +2,7 @@
 
 // use exercise::exercises;
 
-use crate::traits::Overview;
+// use crate::traits::Overview;
 
 mod arr;
 mod closures;
@@ -17,10 +17,10 @@ mod test;
 mod traits;
 mod variables;
 mod vectors;
-mod macros;
-mod declarative;
+// mod macros;
+// mod declarative;
 
-use vectors::vector;
+// use vectors::vector;
 
 // use std::io;
 
@@ -46,7 +46,7 @@ fn main() {
     // control_flow::decision_making();
 
     // let mut my_vector = vec![1, 3, 5, 7];
-    // exercise::exercises();
+    exercise::exercises();
     // let mut my_car = exercises.();
     // print!("{:?}", exercise::exercises(&mut my_vector));
     // my_vector.push(15);
@@ -70,7 +70,7 @@ fn main() {
     // println!("{:?}", a);
     // concurrency::concurrency();
     // macros::mac();
-    declarative::declare();
+    // declarative::declare();
     
 }
 

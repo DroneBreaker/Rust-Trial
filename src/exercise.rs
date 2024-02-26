@@ -1,5 +1,5 @@
-use std::rc::Rc;
-use rayon::prelude::*;
+// use std::rc::Rc;
+// use rayon::prelude::*;
 
 
 pub fn exercises() {
@@ -136,18 +136,49 @@ pub fn exercises() {
     // );
 
 
-    fn fibonacci(n: u64) -> u64 {
-        if n <= 1 {
-            return n;
+    // fn fibonacci(n: u64) -> u64 {
+    //     if n <= 1 {
+    //         return n;
+    //     }
+
+    //     let (fib1, fib2) = rayon::join(|| fibonacci(n - 1), || fibonacci(n - 2));
+
+    //     fib1 + fib2
+
+    // }
+
+    // let n = 40;
+    // let result = fibonacci(n);
+    // println!("Fibonacci({}) = {}", n, result);
+
+    macro_rules! op {
+        ($a: expr, $b: expr, 1) => {
+            $a + $b
+        };
+
+        ($a: expr, $b: expr, 1) => {
+            $a - $b
+        };
+
+        ($a: expr, $b: expr, 2) => {
+            $a * $b
+        };
+
+        ($a: expr, $b: expr, 3) => {
+            $a / $b
+        };
+
+        ($a: expr, $b: expr, 4) => {
+            $a % $b
         }
-
-        let (fib1, fib2) = rayon::join(|| fibonacci(n - 1), || fibonacci(n - 2));
-
-        fib1 + fib2
-
     }
 
-    let n = 40;
-    let result = fibonacci(n);
-    println!("Fibonacci({}) = {}", n, result);
+    let a = 10;
+    let b = 5;
+
+    println!("Addition: {}", op!(a, b, 1));
+    println!("Subtraction: {}", op!(a, b, 2));
+    println!("Multiplication: {}", op!(a, b, 3));
+    println!("Divison: {}", op!(a, b, 4));
+    println!("Modulo: {}", op!(a, b, 4));
 }
