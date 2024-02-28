@@ -19,6 +19,7 @@ mod variables;
 mod vectors;
 // mod macros;
 // mod declarative;
+mod async;
 
 // use vectors::vector;
 
@@ -71,6 +72,7 @@ fn main() {
     // concurrency::concurrency();
     // macros::mac();
     // declarative::declare();
+    async::asyncronous();
     
 }
 
